@@ -97,6 +97,19 @@ def get_image(choice):
     else:
         return scissors_img
     
+# Fonction à appeler lors de l'appui de la touche P
+def on_key_press(e):
+    if nbDeCoups.get() < 10:
+        if e.char.lower() == "p":
+            play("Papier")
+        if e.char.lower() == "r":
+            play("Pierre")
+        if e.char.lower() == "c":
+            play("Ciseaux")
+    
+# Associer la fonction on_key_press à l'évènement <Key>
+fenetre.bind('<Key>', on_key_press)
+    
 # Définition des variables
 result_var = tk.StringVar()
 player_score_var = tk.IntVar()
@@ -104,9 +117,9 @@ computer_score_var = tk.IntVar()
 nbDeCoups = tk.IntVar(value=0)
     
 # Charger les images
-rock_img = ImageTk.PhotoImage(Image.open("./rockpaperscissors/pierre.gif"))
-paper_img = ImageTk.PhotoImage(Image.open("./rockpaperscissors/papier.gif"))
-scissors_img = ImageTk.PhotoImage(Image.open("./rockpaperscissors/ciseaux.gif"))
+rock_img = ImageTk.PhotoImage(Image.open("./pierre.gif"))
+paper_img = ImageTk.PhotoImage(Image.open("./papier.gif"))
+scissors_img = ImageTk.PhotoImage(Image.open("./ciseaux.gif"))
 # Création image vide en taille 0x0 transparente
 empty_img = ImageTk.PhotoImage(Image.new("RGBA", (0, 0), (0, 0, 0, 0)))
 

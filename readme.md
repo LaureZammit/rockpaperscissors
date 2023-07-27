@@ -20,3 +20,16 @@
 
 * Mis en place de chaque élément avec ``.place`` au lieu de ``.pack``
 * Mise en forme du texte et de la Listbox
+
+## Prise en compte de la victoire et de la défaite
+
+* Phrase qui permet de dire si la partie est gagnée ou perdue
+* Désactivation des boutons
+* Apparition d'un bouton pour lancer une nouvelle partie
+
+## Nouvelle fonctionnalité
+
+* Possibilité de jouer avec les touches du clavier : 
+    * "c" : ciseaux
+    * "r" : pierre
+    * "p" : papier
