@@ -3,10 +3,14 @@
 
 import random
 import tkinter as tk
+from tkinter import ttk
 from PIL import Image, ImageTk
 
 # Création de la fenêtre principale
 fenetre = tk.Tk()
+fenetre.geometry('700x650')
+fenetre.resizable(width=False, height=False)
+fenetre.configure(bg="#F1F1F1")
 fenetre.title("Pierre - Papier - Ciseaux")
 
 # Fonction qui choisi au hasard pour l'ordinateur
@@ -55,55 +59,54 @@ player_score_var = tk.IntVar()
 computer_score_var = tk.IntVar()
     
 # Charger les images
-rock_img = ImageTk.PhotoImage(Image.open("./pierre.gif"))
-paper_img = ImageTk.PhotoImage(Image.open("./papier.gif"))
-scissors_img = ImageTk.PhotoImage(Image.open("./ciseaux.gif"))
+rock_img = ImageTk.PhotoImage(Image.open("./rockpaperscissors/pierre.gif"))
+paper_img = ImageTk.PhotoImage(Image.open("./rockpaperscissors/papier.gif"))
+scissors_img = ImageTk.PhotoImage(Image.open("./rockpaperscissors/ciseaux.gif"))
 
 # Création des widget avec les images
 user_label = tk.Label(fenetre, text="Choisissez : ")
-user_label.pack(pady=10)
+user_label.place(x=70, y=20)
 
 rock_button = tk.Button(fenetre, image=rock_img, command=lambda : play("Pierre"))
-rock_button.pack(side=tk.LEFT, padx=10)
+rock_button.place(x=40, y=60)
               
 paper_button = tk.Button(fenetre, image=paper_img, command=lambda : play("Papier"))
-paper_button.pack(side=tk.LEFT, padx=10)
+paper_button.place(x=40, y=260)
 
 scissors_button = tk.Button(fenetre, image=scissors_img, command=lambda : play("Ciseaux"))
-scissors_button.pack(side=tk.LEFT, padx=10)
+scissors_button.place(x=40, y=460)
 
-# Etiqueetes pour afficher les images jouées
+# Etiquettes pour afficher les images jouées
 user_img_label = tk.Label(fenetre, image=None) # Pas d'image de départ
-user_img_label.pack(pady=10)
+user_img_label.place(x=300, y=60)
 
 computer_img_label = tk.Label(fenetre, image=None) # Pas d'image de départ
-computer_img_label.pack(pady=10)
+computer_img_label.place(x=300, y=200)
 
 result_label = tk.Label(fenetre, textvariable=result_var)
-result_label.pack(pady=20)
+result_label.place(x=500, y=180)
 
 # Création d'une frame pour les score
 score_frame = tk.Frame(fenetre)
-score_frame.pack()
+score_frame.place(x=290, y=400)
 
-player_score_label = tk.Label(score_frame, text="Score J1 :")
+player_score_label = tk.Label(score_frame, text="Score J1 :", font=("Verdana 10"), fg='#6f9fbd')
 player_score_label.pack(side=tk.LEFT, padx=10)
 
-player_score_display = tk.Label(score_frame, textvariable=player_score_var)
+player_score_display = tk.Label(score_frame, textvariable=player_score_var, font=("Verdana 10 bold"), fg='#6f9fbd')
 player_score_display.pack(side=tk.LEFT, padx=10)
 
-computer_score_label = tk.Label(score_frame, text="Score Ordinateur :")
+computer_score_label = tk.Label(score_frame, text="Score Ordinateur :", font=("Verdana 10"), fg='#6f9fbd')
 computer_score_label.pack(side=tk.LEFT, padx=10)
 
-computer_score_display = tk.Label(score_frame, textvariable=computer_score_var)
+computer_score_display = tk.Label(score_frame, textvariable=computer_score_var, font=("Verdana 10 bold"), fg='#6f9fbd')
 computer_score_display.pack(side=tk.LEFT, padx=10)
 
 # Gestion de l'historique et de l'affichage
-history_label = tk.Label(fenetre, text="Historique des coups : ")
-history_label.pack(pady=10)
+history_label = tk.Label(fenetre, text="Historique des coups : ", fg='black', font=("Verdana 12 bold"))
+history_label.place(x=300, y=440)
 
-history_listbox = tk.Listbox(fenetre, width=40, height=6)
-history_listbox.pack()
-
+history_listbox = tk.Listbox(fenetre, width=40, height=6, bg='#6f9fbd', fg='white')
+history_listbox.place(x=300, y=470)
 
 fenetre.mainloop()
