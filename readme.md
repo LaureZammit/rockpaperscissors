@@ -2,7 +2,7 @@
 
 * Utilisation de Tkinter sur Python
 * Jeu entre un utilisateur et un ordinateur
-* If... else, image, widgets, fonctions, labels, frames
+* If... else, images, widgets, fonctions, labels, frames
 * Historique des coups joués
 
 ## Énoncé de l'exercice
@@ -18,7 +18,7 @@
 
 ![Aperçu de la fenêtre Tkinter version 2](visuel-v2.jpg)
 
-* Mis en place de chaque élément avec ``.place`` au lieu de ``.pack``
+* Mise en place de chaque élément avec ``.place`` au lieu de ``.pack``
 * Mise en forme du texte et de la Listbox
 
 ## Prise en compte de la victoire et de la défaite
