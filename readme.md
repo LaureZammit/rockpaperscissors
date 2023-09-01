@@ -53,7 +53,7 @@
        * "r" : pierre
        * "p" : papier
 
-Voir les [open issues](https://github.com/LaureZammit/Pokedex/issues).
+Voir les [open issues](https://github.com/LaureZammit/rockpaperscissors/issues).
 
 ## Visuel v1
 
@@ -71,7 +71,7 @@ Voir les [open issues](https://github.com/LaureZammit/Pokedex/issues).
 
 Laure Zammit - laurezammit@gmail.com
 
-Project Link: [https://github.com/LaureZammit/Pokedex.git](https://github.com/LaureZammit/Pokedex.git)
+Project Link: [https://github.com/LaureZammit/rockpaperscissors.git](https://github.com/LaureZammit/rockpaperscissors.git)
 
 ## Remerciements
 
